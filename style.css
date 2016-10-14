@@ -1,0 +1,39 @@
+h1 {
+  text-align: center;
+}
+
+#container {
+  height: 450px;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.simon {
+  height: 200px;
+  width: 200px;
+  float: left;
+}
+
+#red {
+  background-color: red;
+  border-radius: 200px 0 0 0;
+}
+
+#green {
+  background-color: green;
+  border-radius: 0 0 0 200px;
+}
+
+#blue {
+  background-color: blue;
+  border-radius: 0 200px 0 0;
+}
+
+#yellow {
+  background-color: yellow;
+  border-radius: 0 0 200px 0;
+}
+
+input {
+  align-content: center;
+}

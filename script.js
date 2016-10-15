@@ -1,47 +1,77 @@
 $(document).ready(function(){
 
-// var playedSteps = [];
-var posSequence = [$("#red"), $("#blue"), $("#green"), $("#yellow")];
-// var round = 0;
-// var playNumber = 0;
-// var clicked = 0;
+  var posSequence = [$("#red"), $("#blue"), $("#green"), $("#yellow")];
+  var roundNumber = 0;
+  var randomSequence;
+  var sequenceColors;
+  var playerClicks = [];
+  var storedSequences = [];
 
-//To begin the game
+  //
 
-var randomSequence;
-var sequenceColors;
-var storedSequences;
-var playerClicks;
-var blinkTimes = 2;
+  $("#start").on("click", begin);
 
-$("#start").on("click", function() {
+  $("#next").on("click", round);
 
-// for (var i=0; i < 11; i++) {
+  $(".simon").on("click", divClick);
 
-function lightSequence() {
-  randomSequence = posSequence[Math.floor(Math.random() * posSequence.length)];
-  sequenceColors = randomSequence.fadeIn(200).fadeOut(200).fadeIn(200);
-  storedSequences = sequenceColors.attr("id");
+  ////
+
+  function begin(){
+    playerClicks = [];
+    storedSequences = [];
+    roundNumber = 0;
+    lightSequence();
+    roundNumber++;
+  }
+
+  function round(){
+      lightSequence();
+    roundNumber++;
+  }
+
+  ///
+
+  function lightSequence(){
+    randomSequence = posSequence[Math.floor(Math.random() * posSequence.length)];
+    // console.log(storedSequences + "%");
+    storedSequences.push(randomSequence.attr("id"));
+    // $(randomSequence).fadeIn(400).fadeOut(400).fadeIn(400);
+    // console.log(sequenceColors);
+    // console.log(storedSequences + "!");
+    console.log(storedSequences + "$");
+    setTimeout(function() { showColors(0);}, 500);
+  }
+
+function showColors(index){
+  if (index < storedSequences.length) {
+    $('#' + storedSequences[index]).fadeIn(400).fadeOut(400).fadeIn(400);
+    setTimeout(function() { showColors(index + 1);}, 700);
+    console.log(storedSequences[index]);
+  }
 }
 
-lightSequence();
+  //
 
-  $(".simon").on("click", function() {
-    playerClicks = $(this).attr("id");
+  function divClick(){
+    $(this).fadeIn(400).fadeOut(400).fadeIn(400);
+    playerClicks.push($(this).attr("id"));
 
-    if (playerClicks === storedSequences) {
-      for (var i=0; i < blinkTimes; i++) {
-        lightSequence();
+    for (var i=0; i < storedSequences.length; i++) {
+      if (playerClicks.length === storedSequences.length) {
+        if (playerClicks[i] === storedSequences[i]) {
+        playerClicks = [];
+        console.log(storedSequences +"?");
+        // alert("Move on to the next round");
+        return;
+      } else {
+        // alert("You don't got it");
+        playerClicks = [];
+        storedSequences = [];
+        return;
       }
-      blinkTimes += 1;
-    } else {
-      // alert("You don't got it");
-      return;
     }
-  })
-
-// }
-
-});
+  }
+  }
 
 });

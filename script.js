@@ -3,7 +3,6 @@ $(document).ready(function(){
   var posSequence = [$("#red"), $("#blue"), $("#green"), $("#yellow")];
   var roundNumber = 0;
   var randomSequence;
-  var sequenceColors;
   var playerClicks = [];
   var storedSequences = [];
 
@@ -60,7 +59,6 @@ function showColors(index){
     function nextRound() {
       playerClicks = [];
       alert("you got it");
-      console.log(storedSequences);
     }
 
     function startAgain() {
@@ -68,6 +66,7 @@ function showColors(index){
       storedSequences = [];
       alert("try again");
     }
+  }
 
   //  for (var i=0; i < storedSequences.length; i++) {
   //     if (playerClicks.length === storedSequences.length) {
@@ -85,8 +84,4 @@ function showColors(index){
   //     }
   //   }
   // }
-
-//bracket closes divClick
-  }
-
 });

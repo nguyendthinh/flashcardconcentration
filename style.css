@@ -4,7 +4,7 @@ h1 {
 
 #container {
   height: 430px;
-  width: 400px;
+  width: 412px;
   margin: 0 auto;
 }
 
@@ -16,25 +16,39 @@ h1 {
 
 #red {
   background-color: red;
-  border-radius: 200px 0 0 0;
+  border-radius: 100px 0 0 0;
+  border: 3px solid white;
 }
 
 #green {
   background-color: green;
-  border-radius: 0 0 0 200px;
+  border-radius: 0 0 0 100px;
+  border: 3px solid white;
 }
 
 #blue {
   background-color: blue;
-  border-radius: 0 200px 0 0;
+  border-radius: 0 100px 0 0;
+  border: 3px solid white;
 }
 
 #yellow {
   background-color: yellow;
-  border-radius: 0 0 200px 0;
+  border-radius: 0 0 100px 0;
+  border: 3px solid white;
 }
 
-input {
-  display: block;
-  margin: auto;
+#buttons {
+  height: 300px;
+  width: 220px;
+  margin: 0 auto;
+}
+
+#start, #next {
+  height: 100px;
+  width: 100px;
+  background-color: purple;
+  float: left;
+  margin-right: 10px;
+  box-shadow: 5px 5px rgba(0,0,0,0.5);
 }

@@ -2,53 +2,77 @@ h1 {
   text-align: center;
 }
 
+body {
+  margin: 0 auto;
+}
+
 #container {
-  height: 430px;
-  width: 412px;
+  height: 460px;
+  width: 460px;
+  margin: 0 auto;
+  border-radius: 100px 100px 100px 100px;
+  display: flex;
+  flex-direction: row;
+  /*flex-wrap: wrap;*/
+  align-content: center;
+  align-items: center;
+}
+
+div {
+  z-index: 3;
+  display: column;
+  width: 93%;
   margin: 0 auto;
 }
 
 .simon {
   height: 200px;
   width: 200px;
-  float: left;
+}
+
+#harddrive {
+  z-index: 1;
+  margin-top: -460px;
+}
+
+#harddrive_img {
+  z-index: 2;
+  margin: auto;
+  display: block;
+  border-radius: 100px 100px 100px 100px;
 }
 
 #red {
-  background-color: red;
   border-radius: 100px 0 0 0;
-  border: 3px solid white;
+  border: 5px solid black;
 }
 
 #green {
-  background-color: green;
   border-radius: 0 0 0 100px;
-  border: 3px solid white;
+  border: 5px solid black;
 }
 
 #blue {
-  background-color: blue;
   border-radius: 0 100px 0 0;
-  border: 3px solid white;
+  border: 5px solid black;
 }
 
 #yellow {
-  background-color: yellow;
   border-radius: 0 0 100px 0;
-  border: 3px solid white;
+  border: 5px solid black;
 }
 
 #buttons {
   height: 300px;
   width: 220px;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 #start, #next {
   height: 100px;
   width: 100px;
-  background-color: purple;
   float: left;
   margin-right: 10px;
-  box-shadow: 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 4px 4px rgba(0,0,0,0.45);
 }

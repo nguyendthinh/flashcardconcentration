@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
   var posSequence = [$("#red"), $("#blue"), $("#green"), $("#yellow")];
-  var roundNumber = 0;
   var randomSequence;
+  var roundNumber = 0;
   var playerClicks = [];
   var storedSequences = [];
 
@@ -10,24 +10,25 @@ $(document).ready(function(){
 
   $("#start").on("click", begin);
 
-  $("#next").on("click", round);
-
   $(".simon").on("click", divClick);
 
   ////
 
   function begin(){
+    event.preventDefault();
+    $("body").css("background-image", "url('IMAGES/harddrive.jpg')");
+    $("#container").css("background-image", "url('IMAGES/techbackground.jpg')");
     playerClicks = [];
     storedSequences = [];
     roundNumber = 0;
     lightSequence();
     roundNumber++;
   }
-
-  function round(){
-      lightSequence();
-    roundNumber++;
-  }
+  //
+  // function round(){
+  //     lightSequence();
+  //   roundNumber++;
+  // }
 
   ///
 
@@ -40,7 +41,7 @@ $(document).ready(function(){
 function showColors(index){
   if (index < storedSequences.length) {
     $('#' + storedSequences[index]).fadeIn(400).fadeOut(400).fadeIn(400);
-    setTimeout(function() { showColors(index + 1);}, 700);
+    setTimeout(function() { showColors(index + 1);}, 800);
   }
 }
 
@@ -55,33 +56,20 @@ function showColors(index){
         return element === playerClicks[index]
       }) ? nextRound() : startAgain();
     }
+  }
 
     function nextRound() {
       playerClicks = [];
-      alert("you got it");
+      roundNumber++;
+      setTimeout(function() {lightSequence();}, 500);
     }
 
     function startAgain() {
       playerClicks = [];
       storedSequences = [];
-      alert("try again");
+      roundNumber = 0;
+      $("body").css("background-image", "url('IMAGES/futuristictexture2.jpg')");
+      $("#container").css("background-image", "url('IMAGES/techbackground2.jpg')");
     }
-  }
 
-  //  for (var i=0; i < storedSequences.length; i++) {
-  //     if (playerClicks.length === storedSequences.length) {
-  //       if (playerClicks === storedSequences) {
-  //       console.log(playerClicks);
-  //       console.log(storedSequences);
-  //       playerClicks = [];
-  //       alert("you got it");
-  //     } else {
-  //       console.log(playerClicks);
-  //       console.log(storedSequences);
-  //       alert("try again");
-  //       playerClicks = [];
-  //       storedSequences = [];
-  //     }
-  //   }
-  // }
 });

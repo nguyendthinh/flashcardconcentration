@@ -1,9 +1,13 @@
 h1 {
   text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  color: white;
 }
 
 body {
   margin: 0 auto;
+  background-image: url("IMAGES/harddrive.jpg");
 }
 
 #container {
@@ -16,6 +20,8 @@ body {
   /*flex-wrap: wrap;*/
   align-content: center;
   align-items: center;
+  background-image: url("IMAGES/techbackground.jpg");
+  /*box-shadow: 70px 200px 10px 30px rgba(0,0,0,0.25);*/
 }
 
 div {
@@ -29,18 +35,6 @@ div {
   height: 200px;
   width: 200px;
   padding: 2px;
-}
-
-#harddrive {
-  z-index: 1;
-  margin-top: -460px;
-}
-
-#harddrive_img {
-  z-index: 2;
-  margin: auto;
-  display: block;
-  border-radius: 100px 100px 100px 100px;
 }
 
 #red {
@@ -61,15 +55,13 @@ div {
 
 #buttons {
   height: 300px;
-  width: 220px;
+  width: 100px;
   margin: 0 auto;
   margin-top: 20px;
 }
 
-#start, #next {
+#start {
   height: 100px;
   width: 100px;
-  float: left;
-  margin-right: 10px;
-  box-shadow: 4px 4px rgba(0,0,0,0.45);
+  border-radius: 10px 10px;
 }

@@ -1,13 +1,20 @@
+body {
+  margin: 0 auto;
+  background-image: url("IMAGES/harddrive.jpg");
+}
+
+#headerbox {
+  background-color: black;
+  border: 5px solid #b0f8f7;
+  width: 50%;
+  margin: 0 auto;
+}
+
 h1 {
   text-align: center;
   font-size: 50px;
   font-weight: bolder;
   color: white;
-}
-
-body {
-  margin: 0 auto;
-  background-image: url("IMAGES/harddrive.jpg");
 }
 
 #container {
@@ -54,7 +61,7 @@ div {
 }
 
 #buttons {
-  height: 300px;
+  height: 100px;
   width: 100px;
   margin: 0 auto;
   margin-top: 20px;
@@ -64,4 +71,15 @@ div {
   height: 100px;
   width: 100px;
   border-radius: 10px 10px;
+}
+
+#textbox {
+  margin-top: 20px;
+}
+
+#round {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
 }

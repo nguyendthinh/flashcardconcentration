@@ -1,16 +1,14 @@
 body {
   margin: 0 auto;
   background-image: url("IMAGES/harddrive.jpg");
+  font-family: 'Audiowide', cursive;
   /*background-position: 0px 0px;
-
-  animation: animatedBackground 10s linear infinite;
-
-  font-family: impact;*/
+  animation: animatedBackground 10s linear infinite;*/
 }
 /*
 @-webkit-keyframes animatedBackground {
   from { background-position: 0 0; }
-  to { background-position: 0 100%; }
+  to { background-position: 100% 0; }
 }*/
 
 #container {
@@ -81,7 +79,7 @@ h2 {
 
 #button {
   height: 100px;
-  width: 100px;
+  width: 120px;
   margin: 20px auto;
   box-shadow: 4px 4px 0 #b0f8f7;
   border-radius: 12px;
@@ -93,7 +91,9 @@ h2 {
 
 #start, #timer, #clicks {
   text-align: center;
-  margin: 0 auto;
-  font-size: 30px;
+  vertical-align: middle;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 25px;
   font-weight: bolder;
 }

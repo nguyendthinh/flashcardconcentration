@@ -20,14 +20,14 @@ $(document).ready(function(){
   function begin(){
     event.preventDefault();
     count = 0;
-    counter = setInterval(startTimer, 1000);
-    $("body").css("background-image", "url('IMAGES/harddrive.jpg')");
-    $("#container").css("background-image", "url('IMAGES/techbackground.jpg')");
-    $(".box").css({"color" : "#b0f8f7", "border" : "5px solid #b0f8f7"});
     playerClicks = [];
     storedSequences = [];
     roundNumber = 0;
     roundNumber++;
+    counter = setInterval(startTimer, 1000);
+    $("body").css("background-image", "url('IMAGES/harddrive.jpg')");
+    $("#container").css("background-image", "url('IMAGES/techbackground.jpg')");
+    $(".box").css({"color" : "#b0f8f7", "border" : "5px solid #b0f8f7"});
     lightSequence();
     $("#clicks").text((storedSequences.length - playerClicks.length) + " Clicks Left");
   }
@@ -88,7 +88,6 @@ function showColors(index){
     function startTimer() {
       count++;
       $("#timer").text(count + " seconds");
-      console.log(count);
     }
 
     function stopTimer() {

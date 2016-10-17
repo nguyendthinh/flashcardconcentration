@@ -18,6 +18,7 @@ $(document).ready(function(){
     event.preventDefault();
     $("body").css("background-image", "url('IMAGES/harddrive.jpg')");
     $("#container").css("background-image", "url('IMAGES/techbackground.jpg')");
+    $(".box").css({"color" : "#b0f8f7", "border" : "5px solid #b0f8f7"});
     playerClicks = [];
     storedSequences = [];
     roundNumber = 0;
@@ -28,10 +29,11 @@ $(document).ready(function(){
   ///
 
   function lightSequence(){
-    $("#round").text('Round ' + roundNumber);
     randomSequence = posSequence[Math.floor(Math.random() * posSequence.length)];
     storedSequences.push(randomSequence.attr("id"));
     setTimeout(function() { showColors(0);}, 700);
+    $("#round").text("You are on LEVEL " + roundNumber);
+    // $("#steps").text("You have " + (storedSequences.length - playerClicks.length) + " clicks left");
   }
 
 function showColors(index){
@@ -46,6 +48,7 @@ function showColors(index){
   function divClick(){
     $(this).fadeIn(300).fadeOut(300).fadeIn(300);
     playerClicks.push($(this).attr("id"));
+    $("#steps").text("You have " + (storedSequences.length - playerClicks.length) + " clicks left");
 
     if (playerClicks.length === storedSequences.length) {
       storedSequences.every(function(element, index){
@@ -56,6 +59,7 @@ function showColors(index){
 
     function nextRound() {
       playerClicks = [];
+      // $("#steps").text("You have " + (storedSequences.length - playerClicks.length) + " clicks left");
       roundNumber++;
       setTimeout(function() {lightSequence();}, 500);
     }
@@ -67,7 +71,8 @@ function showColors(index){
       event.preventDefault();
       $("body").css("background-image", "url('IMAGES/futuristictexture2.jpg')");
       $("#container").css("background-image", "url('IMAGES/techbackground2.jpg')");
-      $("#round").text("ERROR ERROR ERROR ERROR ERROR ERROR")
+      $(".box").css({"color" : "#ea9696", "border" : "5px solid #ea9696"});
+      $("#round").text("ERROR")
     }
 
 });

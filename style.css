@@ -1,8 +1,17 @@
 body {
   margin: 0 auto;
   background-image: url("IMAGES/harddrive.jpg");
-  font-family: impact;
+  /*background-position: 0px 0px;
+
+  animation: animatedBackground 10s linear infinite;
+
+  font-family: impact;*/
 }
+/*
+@-webkit-keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}*/
 
 #container {
   z-index: 1;
@@ -17,7 +26,6 @@ body {
   align-content: center;
   align-items: center;
   background-image: url("IMAGES/techbackground.jpg");
-  /*box-shadow: 70px 200px 10px 30px rgba(0,0,0,0.25);*/
 }
 
 div {
@@ -32,8 +40,7 @@ div {
   height: 200px;
   width: 200px;
   padding: 2px;
-  box-shadow: 15px 15px 20px rgba(0, 0, 0, .8);
-
+  box-shadow: 15px 15px 10px rgba(0, 0, 0, .8);
 }
 
 #red {
@@ -56,24 +63,26 @@ div {
   background-color: black;
   border: 6px solid #b0f8f7;
   color: #b0f8f7;
-}
-
-#textbox {
-  width: 30%;
+  width: 37.5%;
   margin: 20px auto;
 }
 
-h2, #steps {
+h2 {
   text-align: center;
   font-size: 40px;
   font-weight: bolder;
+  margin: 10px auto;
+}
+
+#buttonbox {
+  display: flex;
+  flex-direction: row;
 }
 
 #button {
   height: 100px;
   width: 100px;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 20px auto;
   box-shadow: 4px 4px 0 #b0f8f7;
   border-radius: 12px;
 }
@@ -82,16 +91,9 @@ h2, #steps {
   box-shadow: 4px 1px 0 #b0f8f7;
 }
 
-#start {
+#start, #timer, #clicks {
   text-align: center;
-  margin-top: 13px;
+  margin: 0 auto;
   font-size: 30px;
   font-weight: bolder;
 }
-
-/*#round {
-  color: white;
-  text-align: center;
-  font-size: 50px;
-  font-weight: bolder;
-}*/

@@ -6,6 +6,9 @@ $(document).ready(function(){
   var playerClicks = [];
   var storedSequences = [];
 
+  var counter;
+  var count = 0;
+
   //
 
   $("#start").on("click", begin);
@@ -16,6 +19,8 @@ $(document).ready(function(){
 
   function begin(){
     event.preventDefault();
+    count = 0;
+    counter = setInterval(startTimer, 1000);
     $("body").css("background-image", "url('IMAGES/harddrive.jpg')");
     $("#container").css("background-image", "url('IMAGES/techbackground.jpg')");
     $(".box").css({"color" : "#b0f8f7", "border" : "5px solid #b0f8f7"});
@@ -24,6 +29,7 @@ $(document).ready(function(){
     roundNumber = 0;
     roundNumber++;
     lightSequence();
+    $("#clicks").text((storedSequences.length - playerClicks.length) + " Clicks Left");
   }
 
   ///
@@ -33,7 +39,7 @@ $(document).ready(function(){
     storedSequences.push(randomSequence.attr("id"));
     setTimeout(function() { showColors(0);}, 700);
     $("#round").text("You are on LEVEL " + roundNumber);
-    // $("#steps").text("You have " + (storedSequences.length - playerClicks.length) + " clicks left");
+    $("#clicks").text((storedSequences.length - playerClicks.length) + " Clicks Left");
   }
 
 function showColors(index){
@@ -48,7 +54,7 @@ function showColors(index){
   function divClick(){
     $(this).fadeIn(300).fadeOut(300).fadeIn(300);
     playerClicks.push($(this).attr("id"));
-    $("#steps").text("You have " + (storedSequences.length - playerClicks.length) + " clicks left");
+    $("#clicks").text((storedSequences.length - playerClicks.length) + " Clicks Left");
 
     if (playerClicks.length === storedSequences.length) {
       storedSequences.every(function(element, index){
@@ -59,20 +65,35 @@ function showColors(index){
 
     function nextRound() {
       playerClicks = [];
-      // $("#steps").text("You have " + (storedSequences.length - playerClicks.length) + " clicks left");
       roundNumber++;
       setTimeout(function() {lightSequence();}, 500);
     }
 
     function startAgain() {
+      stopTimer();
       playerClicks = [];
       storedSequences = [];
       roundNumber = 0;
+      count = 0;
       event.preventDefault();
       $("body").css("background-image", "url('IMAGES/futuristictexture2.jpg')");
       $("#container").css("background-image", "url('IMAGES/techbackground2.jpg')");
       $(".box").css({"color" : "#ea9696", "border" : "5px solid #ea9696"});
       $("#round").text("ERROR")
+      $("#clicks").text("0 Clicks Left");
+    }
+
+//
+
+    function startTimer() {
+      count++;
+      $("#timer").text(count + " seconds");
+      console.log(count);
+    }
+
+    function stopTimer() {
+        clearInterval(counter);
+        $("#timer").text((playerClicks.length * 10) + (parseInt((playerClicks.length/count) * 10)) + " Points");
     }
 
 });

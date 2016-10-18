@@ -2,14 +2,14 @@ body {
   margin: 0 auto;
   background-image: url("IMAGES/harddrive.jpg");
   font-family: 'Audiowide', cursive;
-  /*background-position: 0px 0px;
-  animation: animatedBackground 10s linear infinite;*/
+  background-position: 0px 0px;
+  animation: animatedBackground 10s linear infinite;
 }
-/*
+
 @-webkit-keyframes animatedBackground {
   from { background-position: 0 0; }
   to { background-position: 100% 0; }
-}*/
+}
 
 #container {
   height: 460px;

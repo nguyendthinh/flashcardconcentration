@@ -9,13 +9,12 @@ $(document).ready(function(){
   var counter;
   var count = 0;
 
-  //
+  // On Click functions
 
   $("#start").on("click", begin);
-
   $(".simon").on("click", divClick);
 
-  ////
+  //// New Game Button
 
   function begin(){
     event.preventDefault();
@@ -24,6 +23,7 @@ $(document).ready(function(){
     storedSequences = [];
     roundNumber = 0;
     roundNumber++;
+    clearInterval(counter);
     counter = setInterval(startTimer, 1000);
     $("body").css("background-image", "url('IMAGES/harddrive.jpg')");
     $("#container").css("background-image", "url('IMAGES/techbackground.jpg')");
@@ -32,7 +32,7 @@ $(document).ready(function(){
     $("#clicks").text((storedSequences.length - playerClicks.length) + " Clicks Left");
   }
 
-  ///
+  /// Lighting up the tile sequences
 
   function lightSequence(){
     randomSequence = posSequence[Math.floor(Math.random() * posSequence.length)];
@@ -49,7 +49,7 @@ function showColors(index){
   }
 }
 
-  //
+  // User click input
 
   function divClick(){
     $(this).fadeIn(300).fadeOut(300).fadeIn(300);
@@ -83,7 +83,7 @@ function showColors(index){
       $("#clicks").text("0 Clicks Left");
     }
 
-//
+// timer function
 
     function startTimer() {
       count++;
@@ -92,7 +92,7 @@ function showColors(index){
 
     function stopTimer() {
         clearInterval(counter);
-        $("#timer").text((playerClicks.length * 10) + (parseInt((playerClicks.length/count) * 100)) + " Points");
+        $("#timer").text((playerClicks.length * 10) + (parseInt((count/playerClicks.length) * 10)) + " Points");
     }
 
 });

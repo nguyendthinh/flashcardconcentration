@@ -17,4 +17,4 @@ The project that I took to the game was to break down each part of creating the 
   4. The most frustrating part however, was figuring out how to let the computer continue the sequence by flashing ONE color at a time as opposed to flashing everything at once in the sequence.
   5. Once I figured out the 4 steps above, I began designing the visual pieces (the tiles, the harddrive, the background) in Photoshop by editing images found on google in Photoshop.
   6. I then added a giant box that houses the new game button and displays the current level that the user is on and two squares for the timer and the "clicks left".
-  7. What was left was just to figure out how put a functioning timer and how to indicate to the player the amount of clicks they have left.
+  7. What was left was just to figure out how put a functioning timer and how to indicate to the player the amount of clicks they have left. **

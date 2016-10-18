@@ -92,7 +92,7 @@ function showColors(index){
 
     function stopTimer() {
         clearInterval(counter);
-        $("#timer").text((playerClicks.length * 10) + (parseInt((playerClicks.length/count) * 10)) + " Points");
+        $("#timer").text((playerClicks.length * 10) + (parseInt((playerClicks.length/count) * 100)) + " Points");
     }
 
 });

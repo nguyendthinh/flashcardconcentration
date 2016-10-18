@@ -12,7 +12,6 @@ body {
 }*/
 
 #container {
-  z-index: 1;
   height: 460px;
   width: 460px;
   margin: 0 auto;
@@ -26,15 +25,12 @@ body {
   background-image: url("IMAGES/techbackground.jpg");
 }
 
-div {
-  z-index: 2;
-  display: column;
+div, header {
   width: 90%;
   margin: 0 auto;
 }
 
 .simon {
-  z-index: 3
   height: 200px;
   width: 200px;
   padding: 2px;
@@ -72,12 +68,12 @@ h2 {
   margin: 10px auto;
 }
 
-#buttonbox {
+#panels {
   display: flex;
   flex-direction: row;
 }
 
-#button {
+.button {
   height: 100px;
   width: 120px;
   margin: 20px auto;
@@ -85,7 +81,7 @@ h2 {
   border-radius: 12px;
 }
 
-#button:active {
+.button:active {
   box-shadow: 4px 1px 0 #b0f8f7;
 }
 

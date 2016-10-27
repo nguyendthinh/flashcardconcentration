@@ -1,8 +1,13 @@
 $(document).ready(function(){
 
+
+
+  // I might rename this to simonButtons
   var posSequence = [$("#red"), $("#blue"), $("#green"), $("#yellow")];
+  // might rename this to randomButton. I'm nitpicky with variable names, but this is personal preference so I dont confuse myself
   var randomSequence;
   var roundNumber = 0;
+
   var playerClicks = [];
   var storedSequences = [];
 
@@ -10,11 +15,17 @@ $(document).ready(function(){
   var count = 0;
 
   // On Click functions
-
+  // super clean code
   $("#start").on("click", begin);
   $(".simon").on("click", divClick);
 
   //// New Game Button
+
+  // Your code is well organized and very readable recommendation is write a
+  // constructor for the Game, though it might seem somewhat daunting at
+  // first. It would encapsulate the DOM elements, the variables for the game, timers, and the functions that handle its operation. It would simplify some things potentially, like resetting the game: clicking start would just instantiate a new Simon object (under one namespace, so it would just reassign the value of that variable rather than creating multiple Simon instances which sounds chaotic). 
+
+
 
   function begin(){
     event.preventDefault();
@@ -44,6 +55,7 @@ $(document).ready(function(){
 
 function showColors(index){
   if (index < storedSequences.length) {
+    // Not sure if the first fadeIn is doing anything here
     $('#' + storedSequences[index]).fadeIn(300).fadeOut(300).fadeIn(300);
     setTimeout(function() { showColors(index + 1);}, 700);
   }
@@ -66,7 +78,9 @@ function showColors(index){
     function nextRound() {
       playerClicks = [];
       roundNumber++;
-      setTimeout(function() {lightSequence();}, 500);
+      // setTimeout(function() {lightSequence();}, 500);
+      // this is preferable I think
+      setTimeout(lightSequence, 500);
     }
 
     function startAgain() {

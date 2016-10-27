@@ -1,3 +1,5 @@
+<!--  Very solid readme! I might add a note up top about technologies used.-->
+
 User Stories:
 
 1. When the user clicks on the new game button, the game will begin by blinking a random color tile.

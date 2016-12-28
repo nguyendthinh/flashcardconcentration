@@ -1,9 +1,24 @@
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
 body {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   background-image: url("IMAGES/harddrive.jpg");
+  background-size: auto;
   font-family: 'Audiowide', cursive;
   background-position: 0px 0px;
   animation: animatedBackground 10s linear infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 @-webkit-keyframes animatedBackground {
@@ -92,4 +107,17 @@ h2 {
   padding-bottom: 5px;
   font-size: 25px;
   font-weight: bolder;
+}
+
+@media screen and (max-width: 500px) {
+
+  html {
+    width: 163vw;
+    height: 160vh;
+  }
+  body {
+    height: auto;
+    width: auto;
+  }
+
 }
